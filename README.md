@@ -1,6 +1,6 @@
-# OBS Config Import Tool / OBS 配置导入工具
+# OBS Config Import Tool / OBS 配置导入工具 / OBS 配置導入工具
 
-[English](#english) | [繁體中文](#繁體中文)
+[English](#english) | [简体中文](#简体中文) | [繁體中文](#繁體中文)
 
 ---
 
@@ -90,6 +90,92 @@ The tool will extract and merge the contents into `%APPDATA%\obs-studio`.
 
 ---
 
+## 简体中文
+
+### 简介
+
+OBS 配置导入工具是一款 Windows 应用程序，可以让您轻松地从 GitHub 或 Gitee 仓库直接导入 OBS Studio 配置文件。
+
+### 功能特点
+
+- **多平台支持**：支持从 GitHub 和 Gitee 导入
+- **分支自动检测**：从 URL 自动检测分支名称
+- **自动语言**：根据系统语言自动切换中文/英文界面
+- **自动备份**：导入前自动备份现有 OBS 设置
+- **操作简便**：只需粘贴仓库链接
+
+### 支持的 URL 格式
+
+**GitHub：**
+```
+https://github.com/用户名/仓库名
+https://github.com/用户名/仓库名/tree/开发分支
+```
+
+**Gitee：**
+```
+https://gitee.com/用户名/仓库名
+https://gitee.com/用户名/仓库名/tree/开发分支
+```
+
+### 使用方法
+
+1. 从 `dist_new` 文件夹下载 `obs_config_loader.exe`
+2. 双击运行程序
+3. 出现提示时粘贴您的仓库链接
+4. 按 Enter 确认，或输入 `y` 使用自定义分支
+5. 重启 OBS Studio 以应用新设置
+
+### 示例输出
+
+```
+============================================
+OBS配置导入工具
+============================================
+
+请输入GitHub或Gitee仓库链接: https://github.com/yourusername/obs-settings
+解析结果:
+  平台: GitHub
+  用户名: yourusername
+  仓库名: obs-settings
+  分支: main
+是否使用自定义分支? (y/N): N
+
+正在从 GitHub 拉取配置...
+仓库: https://github.com/yourusername/obs-settings
+分支: main
+下载成功，正在解压...
+OBS配置路径: C:\Users\Username\AppData\Roaming\obs-studio
+已备份当前配置到: C:\Users\Username\AppData\Roaming\obs-studio_backup_20260526_123456
+正在导入配置...
+✓ 配置导入成功！
+请重启OBS以应用新配置
+
+按回车键退出...
+```
+
+### 系统需求
+
+- Windows 操作系统
+- 已安装 OBS Studio
+- 网络连接
+
+### 仓库结构
+
+您的仓库根目录应包含 OBS 配置文件：
+
+```
+your-repo/
+├── config/
+│   └── obs-studio/
+│       └── ...
+└── ...
+```
+
+工具会将内容解压并合并到 `%APPDATA%\obs-studio`。
+
+---
+
 ## 繁體中文
 
 ### 簡介
@@ -176,6 +262,6 @@ your-repo/
 
 ---
 
-## License / 授權條款
+## License / 授权条款 / 授權條款
 
 MIT License
